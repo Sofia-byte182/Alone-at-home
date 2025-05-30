@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование - Alone at home</title>
+    <link rel="stylesheet" href="css/style-booking.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">Alone at home</a>
+            <nav>
+              <ul>
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a href="search.html">Поиск</a></li>
+                  <li><a href="booking.html">Управление бронированием</a></li>
+              </ul>
+          </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="booking-page">
+        <div class="container">
+            <h1 class="page-title">Бронирование дома-бочки</h1>
+            
+            <!-- Информация о заказе -->
+            <div class="order-info">
+                <div class="info-item">
+                    <div class="info-label">Регион</div>
+                    <div class="info-value">Омская область</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Кемпинг</div>
+                    <div class="info-value">Дача Поддубного</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Адрес</div>
+                    <div class="info-value">г. Омск, ул. Пушкина д.1</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Дата заселения</div>
+                    <div class="info-value">15.06.2023</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Дата выселения</div>
+                    <div class="info-value">20.06.2023</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Выбранная бочка</div>
+                    <div class="info-value">№3</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Стоимость проживания</div>
+                    <div class="info-price">10 000 ₽</div>
+                </div>
+            </div>
+            
+            <!-- Форма бронирования -->
+            <form class="booking-form" id="bookingForm">
+                <!-- Данные о постояльцах -->
+                <div class="form-section">
+                    <h2 class="section-title">Данные о постояльцах</h2>
+                    
+                    <div class="guests-list" id="guestsList">
+                        <!-- Гость 1 -->
+                        <div class="guest-card" id="guest1">
+                            <div class="guest-number">1</div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="lastName1">Фамилия</label>
+                                    <input type="text" id="lastName1" name="lastName1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstName1">Имя</label>
+                                    <input type="text" id="firstName1" name="firstName1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="middleName1">Отчество</label>
+                                    <input type="text" id="middleName1" name="middleName1">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="birthDate1">Дата рождения</label>
+                                    <input type="date" id="birthDate1" name="birthDate1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="document1">Номер документа</label>
+                                    <input type="text" id="document1" name="document1" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary" id="addGuestBtn">+ Добавить человека</button>
+                </div>
+                
+                <!-- Дополнительные услуги -->
+                <div class="form-section">
+                    <h2 class="section-title">Дополнительные услуги</h2>
+                    
+                    <div class="services-list">
+                        <div class="service-item">
+                            <input type="checkbox" id="medicalService" name="medicalService" value="500">
+                            <label for="medicalService">Медицинское сопровождение</label>
+                            <span class="service-price">+500 ₽/чел</span>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="courierService" name="courierService" value="50">
+                            <label for="courierService">Курьерские услуги</label>
+                            <span class="service-price">+50 ₽ + 10 ₽/км</span>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="foodService" name="foodService" value="500">
+                            <label for="foodService">Питание</label>
+                            <span class="service-price">+500 ₽/чел</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Итоговая стоимость -->
+                <div class="total-price">
+                    <div class="total-label">Итого к оплате:</div>
+                    <div class="total-value" id="totalPrice">10 000 ₽</div>
+                </div>
+                
+                <!-- Кнопки -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Назад</button>
+                    <button type="submit" class="btn btn-primary">Оформить бронирование</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">Alone at home</div>
+                    <div class="phone">8 (800) 100-10-10</div>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li>г. Москва, ул. Примерная, 123</li>
+                        <li>info@aloneathome.ru</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alone at home. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Переменные
+            const basePrice = 10000; // Базовая стоимость
+            let guestCount = 1; // Количество гостей
+            
+            // Элементы
+            const guestsList = document.getElementById('guestsList');
+            const addGuestBtn = document.getElementById('addGuestBtn');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const bookingForm = document.getElementById('bookingForm');
+            
+            // Добавление нового гостя
+            addGuestBtn.addEventListener('click', function() {
+                guestCount++;
+                
+                const newGuest = document.createElement('div');
+                newGuest.className = 'guest-card';
+                newGuest.id = 'guest' + guestCount;
+                newGuest.innerHTML = `
+                    <div class="guest-number">${guestCount}</div>
+                    <button type="button" class="remove-guest" onclick="removeGuest(${guestCount})">×</button>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lastName${guestCount}">Фамилия</label>
+                            <input type="text" id="lastName${guestCount}" name="lastName${guestCount}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName${guestCount}">Имя</label>
+                            <input type="text" id="firstName${guestCount}" name="firstName${guestCount}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="middleName${guestCount}">Отчество</label>
+                            <input type="text" id="middleName${guestCount}" name="middleName${guestCount}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthDate${guestCount}">Дата рождения</label>
+                            <input type="date" id="birthDate${guestCount}" name="birthDate${guestCount}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="document${guestCount}">Номер документа</label>
+                            <input type="text" id="document${guestCount}" name="document${guestCount}" required>
+                        </div>
+                    </div>
+                `;
+                
+                guestsList.appendChild(newGuest);
+                calculateTotal();
+            });
+            
+            // Удаление гостя
+            window.removeGuest = function(guestId) {
+                if (guestCount <= 1) return;
+                
+                const guestElement = document.getElementById('guest' + guestId);
+                guestElement.remove();
+                guestCount--;
+                
+                // Перенумеровываем оставшихся гостей
+                const guestCards = guestsList.querySelectorAll('.guest-card');
+                guestCards.forEach((card, index) => {
+                    const newNumber = index + 1;
+                    card.querySelector('.guest-number').textContent = newNumber;
+                    card.id = 'guest' + newNumber;
+                });
+                
+                calculateTotal();
+            };
+            
+            // Расчет общей стоимости
+            function calculateTotal() {
+                let total = basePrice;
+                
+                // Стоимость дополнительных услуг
+                const medicalService = document.getElementById('medicalService');
+                const courierService = document.getElementById('courierService');
+                const foodService = document.getElementById('foodService');
+                
+                if (medicalService.checked) {
+                    total += parseInt(medicalService.value) * guestCount;
+                }
+                
+                if (foodService.checked) {
+                    total += parseInt(foodService.value) * guestCount;
+                }
+                
+                if (courierService.checked) {
+                    total += parseInt(courierService.value);
+                    // Можно добавить расчет за километраж
+                }
+                
+                // Обновляем отображение цены
+                totalPriceElement.textContent = total.toLocaleString('ru-RU') + ' ₽';
+            }
+            
+            // Слушатели изменений для пересчета стоимости
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', calculateTotal);
+            });
+            
+            // Обработка отправки формы
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Бронирование успешно оформлено!');
+                // Здесь можно добавить отправку данных на сервер
+            });
+            
+            // Инициализация расчета
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>

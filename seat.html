@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор дома-бочки - Alone at home</title>
+    <link rel="stylesheet" href="css/style-seat.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">Alone at home</a>
+            <nav>
+              <ul>
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a href="search.html">Поиск</a></li>
+                  <li><a href="booking.html">Управление бронированием</a></li>
+              </ul>
+          </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="seat-selection">
+        <div class="container">
+            <h1 class="page-title">Выбор дома-бочки</h1>
+            
+            <div class="camping-info">
+                <h2 class="camping-name">Дача Поддубного</h2>
+                <div class="camping-address">г. Омск, ул. Пушкина д.1, Омская область</div>
+                
+                <div class="booking-dates">
+                    <div class="date-item">
+                        <div class="date-label">Дата заселения</div>
+                        <div class="date-value">15.06.2023</div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-label">Дата выселения</div>
+                        <div class="date-value">20.06.2023</div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-label">Количество гостей</div>
+                        <div class="date-value">2 человека</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="camping-map">
+                <h2 class="map-title">Схема кемпинга</h2>
+                <p>Выберите свободный дом-бочку на схеме (наведите курсор для деталей):</p>
+                
+                <div class="map-container">
+                    <!-- Изображение схемы кемпинга -->
+                    <img src="images/plan/shema-poselka-0_big.jpg" alt="Схема кемпинга Дача Поддубного" class="map-image" id="campingMap">
+                    
+                    <!-- Интерактивные зоны поверх изображения -->
+                    <div class="map-overlay" id="mapOverlay">
+                        
+                        <div class="map-hotspot" style="top: 51%; left: 34%;" data-barrel="1" onclick="selectBarrel(this)">
+                            <div class="hotspot-tooltip">Бочка #1 (Свободна)</div>
+                        </div>
+                        <div class="map-hotspot occupied" style="top: 35%; left: 41%;" data-barrel="2">
+                            <div class="hotspot-tooltip">Бочка #2 (Занята)</div>
+                        </div>
+                        <div class="map-hotspot" style="top: 42%; left: 43%;" data-barrel="3" onclick="selectBarrel(this)">
+                            <div class="hotspot-tooltip">Бочка #3 (Свободна)</div>
+                        </div>
+                        <div class="map-hotspot" style="top: 55%; left: 45%;" data-barrel="4" onclick="selectBarrel(this)">
+                            <div class="hotspot-tooltip">Бочка #4 (Свободна)</div>
+                        </div>
+                        <div class="map-hotspot occupied" style="top: 60%; left: 40%;" data-barrel="5">
+                            <div class="hotspot-tooltip">Бочка #5 (Занята)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="barrel-legend">
+                        <div class="legend-item">
+                            <div class="legend-color legend-free"></div>
+                            <span>Свободно</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-occupied"></div>
+                            <span>Занято</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-selected"></div>
+                            <span>Выбрано</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-actions">
+                <button id="bookBtn" class="book-btn" disabled onclick="proceedToBooking()">Перейти к бронированию</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">Alone at home</div>
+                    <div class="phone">8 (800) 100-10-10</div>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li>г. Москва, ул. Примерная, 123</li>
+                        <li>info@aloneathome.ru</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alone at home. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Текущая выбранная бочка
+        let selectedBarrel = null;
+        
+        // Функция для получения параметров из URL
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                camping: params.get('camping'),
+                region: params.get('region'),
+                address: params.get('address'),
+                checkin: params.get('checkin'),
+                checkout: params.get('checkout'),
+                guests: params.get('guests'),
+                price: params.get('price')
+            };
+        }
+        
+        // Функция выбора бочки
+        function selectBarrel(barrel) {
+            if (selectedBarrel) {
+                selectedBarrel.classList.remove('selected');
+            }
+            
+            barrel.classList.add('selected');
+            selectedBarrel = barrel;
+            document.getElementById('bookBtn').disabled = false;
+        }
+        
+        // Функция перехода к бронированию
+        function proceedToBooking() {
+            if (selectedBarrel) {
+                const params = getUrlParams();
+                const barrelNumber = selectedBarrel.getAttribute('data-barrel');
+                
+                // Формируем URL с параметрами
+                const bookingUrl = `booking.html?camping=${encodeURIComponent(params.camping)}` +
+                                  `&region=${encodeURIComponent(params.region)}` +
+                                  `&address=${encodeURIComponent(params.address)}` +
+                                  `&checkin=${params.checkin}` +
+                                  `&checkout=${params.checkout}` +
+                                  `&guests=${params.guests}` +
+                                  `&price=${params.price}` +
+                                  `&barrel=${barrelNumber}`;
+                
+                window.location.href = bookingUrl;
+            }
+        }
+        
+        // Инициализация карты
+        function initMap() {
+            const params = getUrlParams();
+            
+            // Обновляем информацию о кемпинге
+            document.querySelector('.camping-name').textContent = params.camping;
+            document.querySelector('.camping-address').textContent = `${params.address}, ${params.region}`;
+            
+            // Обновляем даты бронирования
+            document.querySelectorAll('.date-value')[0].textContent = params.checkin;
+            document.querySelectorAll('.date-value')[1].textContent = params.checkout;
+            document.querySelectorAll('.date-value')[2].textContent = `${params.guests} человека`;
+            
+            // Загружаем соответствующую схему кемпинга
+            let mapImage = 'images/plan/shema-poselka-0_big.jpg'; // По умолчанию
+            
+            switch(params.camping) {
+                case 'Лесная поляна':
+                    mapImage = 'images/plan/shema-poselka-1_big.jpg';
+                    break;
+                case 'Бочки Диогена':
+                    mapImage = 'images/plan/shema-poselka-2_big.jpg';
+                    break;
+                case 'Белая дача':
+                    mapImage = 'images/plan/shema-poselka-0_big.jpg';
+                    break;
+                // Для "Дача Поддубного" используется изображение по умолчанию
+            }
+            
+            document.getElementById('campingMap').src = mapImage;
+            document.getElementById('campingMap').alt = `Схема кемпинга ${params.camping}`;
+            
+            // Здесь можно добавить логику для разных горячих точек
+            // в зависимости от кемпинга
+        }
+        
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone at home</title>
+    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="script" href="js/script-index.js" />
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Alone at home</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="search.html">Поиск</a></li>
+                    <li><a href="booking.html">Управление бронированием</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция с формой поиска -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Комфортно для Вас — безопасно для общества</h1>
+            <div class="search-form animate__animated animate__fadeInUp">
+                <h2>Найти идеальный дом-бочку</h2>
+                <form action="search.html" method="GET">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="region">Регион</label>
+                            <select id="region" name="region" required>
+                                <option value="">Выберите регион</option>
+                                <option value="1">Карелия</option>
+                                <option value="2">Алтай</option>
+                                <option value="3">Байкал</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="check-in">Дата заселения</label>
+                            <input type="date" id="check-in" name="check-in" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="check-out">Дата выселения</label>
+                            <input type="date" id="check-out" name="check-out" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Количество человек</label>
+                            <select id="guests" name="guests" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">Найти кемпинг</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Алгоритм бронирования -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Как забронировать дом-бочку</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Выберите даты</h3>
+                    <p>Укажите желаемые даты заселения и выселения</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Выберите регион</h3>
+                    <p>Подберите живописное место для отдыха</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Выберите кемпинг</h3>
+                    <p>Найдите кемпинг с доступными домами-бочками</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <h3>Выберите дом</h3>
+                    <p>Подберите понравившийся дом на схеме кемпинга</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">5</div>
+                    <h3>Дополнительные услуги</h3>
+                    <p>Закажите питание, медицинское сопровождение</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">6</div>
+                    <h3>Оформите бронь</h3>
+                    <p>Подтвердите бронирование и отдыхайте с комфортом</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Информация о компании -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">О компании</h2>
+            <div class="about-content">
+                <p>Главная цель компании – сделать дни вынужденной самоизоляции максимально комфортными и безопасными
+                    для наших клиентов.
+                </p>
+                <p>Клиенты «Alone at home» имеют возможность забронировать один из уютных домов-бочек, расположенных в
+                    живописнейших уголках нашей страны.</p>
+                <h3 class="reviews-title">Отзывы наших клиентов</h3>
+                <div class="reviews">
+                    <p>"Спасибо большое! Изоляция прошла с пользой! Побольше бы таких проектов!
+                        Успехов вам!
+                        " — Игорь, 42 года</p>
+                    <p>"Понравилось оформление домов-бочек и спектр услуг! Для семьи из 4-х человек все условия,
+                        особенно хотелось отметить качество медицинских услуг!
+                        Однозначно рекомендую!
+                        " — Елена, 38 лет</p>
+                    <p>"Всё очень понравилось.
+                        Изолировались вдвоем с супругой, порадовали цены (особенно семейные акции). Условия проживания
+                        на высоком уровне.
+                        " — Пётр Иванович, 51 год</p>
+                    <p>"Решил совместить приятное с полезным. Отметили в изоляции очередную годовщину с супругой,
+                        качество услуг отличное и главное вокруг никого. Рекомендую!
+                        " — Олег, 44 года</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Акции -->
+    <section class="promo-section">
+        <div class="container">
+            <h2 class="section-title">Акции</h2>
+            <div class="promotions-grid">
+                <!-- Акция 1 -->
+                <div class="promotion-card">
+                    <div class="promo-image-container">
+                        <img src="images/promotions/promotion1.jpg" alt="Дача Поддубного" class="promo-image">
+                        <div class="promo-discount-badge">-60%</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3 class="promo-heading">Скидка до 60% в кемпинге «Дача Поддубного»</h3>
+                        <p class="promo-description">Отдых 2-3 дня в доме-бочке для компании до 5 человек среди
+                            живописной природы.</p>
+                        <button class="promo-details-btn" onclick="openModal('modal1')">
+                            Подробнее об акции
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Акция 2 -->
+                <div class="promotion-card">
+                    <div class="promo-image-container">
+                        <img src="images/promotions/promotion2.jpg" alt="Лесная поляна" class="promo-image">
+                        <div class="promo-discount-badge">-51%</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3 class="promo-heading">Семейный отдых в кемпинге «Лесная поляна»</h3>
+                        <p class="promo-description">Уютное место для самоизоляции семьи с детьми на берегу чистого
+                            озера.</p>
+                        <button class="promo-details-btn" onclick="openModal('modal2')">
+                            Подробнее об акции
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Акция 3 -->
+                <div class="promotion-card">
+                    <div class="promo-image-container">
+                        <img src="images/promotions/promotion3.jpg" alt="Бочки Диогена" class="promo-image">
+                        <div class="promo-discount-badge">-50%</div>
+                    </div>
+                    <div class="promo-content">
+                        <h3 class="promo-heading">Романтический отдых в «Бочках Диогена»</h3>
+                        <p class="promo-description">Месяц изоляции для двоих в уютном доме-бочке со всеми удобствами.
+                        </p>
+                        <button class="promo-details-btn" onclick="openModal('modal3')">
+                            Подробнее об акции
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Модальные окна для акций -->
+    <!-- Модальное окно для акции 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-header">
+                <h2>Скидка до 60%. 2 или 3 дня проживания в доме-бочке (до 5 человек) в кемпинге «Дача Поддубного»</h2>
+            </div>
+            <div class="modal-body">
+                <img src="images/promotions/promotion1.jpg" alt="Дача Поддубного" class="modal-image">
+
+                <p>Устали от городского шума, хотите провести время вынужденной изоляции на свежем воздухе и отрешиться
+                    от повседневных хлопот? Приезжайте на базу отдыха «Дача Поддубного». Здесь вас ждут комфортные и
+                    очень уютные домики-бочки, великолепные природные пейзажи и тишина, нарушаемая лишь пением птиц и
+                    мерным шумом крон величественных деревьев.</p>
+
+                <h3>Отдых 2 дня и 1 ночь:</h3>
+                <ul>
+                    <li>Скидка 53% на 2 дня и 1 ночь проживания в домике для 2 человек (470 руб. вместо 1000 руб.)</li>
+                    <li>Скидка 54% на 2 дня и 1 ночь проживания в домике для 3 человек (920 руб. вместо 2000 руб.)</li>
+                    <li>Скидка 55% на 2 дня и 1 ночь проживания в домике для 4 человек (1350 руб. вместо 3000 руб.)</li>
+                    <li>Скидка 56% на 2 дня и 1 ночь проживания в домике для 5 человек (1760 руб. вместо 4000 руб.)</li>
+                </ul>
+
+                <h3>Отдых 3 дня и 2 ночи:</h3>
+                <ul>
+                    <li>Скидка 57% на 3 дня и 2 ночи проживания в домике для 2 человек (860 руб. вместо 2000 руб.)</li>
+                    <li>Скидка 58% на 3 дня и 2 ночи проживания в домике для 3 человек (1680 руб. вместо 4000 руб.)</li>
+                    <li>Скидка 59% на 3 дня и 2 ночи проживания в домике для 4 человек (2460 руб. вместо 6000 руб.)</li>
+                    <li>Скидка 60% на 3 дня и 2 ночи проживания в домике для 5 человек (3200 руб. вместо 8000 руб.)</li>
+                </ul>
+
+                <p><strong>Условия:</strong> Купон действует в будние и выходные дни при наличии свободных мест.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-book-btn">Забронировать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для акции 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-header">
+                <h2>Скидка до 51%. Уютное место самоизоляции для семьи в обустроенном кемпинге «Лесная поляна»</h2>
+            </div>
+            <div class="modal-body">
+                <img src="images/promotions/promotion2.jpg" alt="Лесная поляна" class="modal-image">
+
+                <p>Кемпинг «Лесная поляна» расположен в живописной загородной местности на берегу чистого озера. В этом
+                    месте можно провести время самоизоляции в стороне от городской суеты с пользой для здоровья.</p>
+
+                <p>Кемпинг располагает благоустроенной охраняемой территорией, обработанной специальными средствами от
+                    клещей. В распоряжении изолирующихся находятся столы, скамейки, зона для костра, санитарный узел и
+                    дровяник. Для маленьких гостей обустроены песочница с игрушками, качели и детский бассейн. Работают
+                    пункты проката велосипедов и рыболовных снастей.</p>
+
+                <h3>Купон действует на следующие виды услуг:</h3>
+                <ul>
+                    <li>Скидка 51% для семьи до 3 человек на 14 суток 1 место для машины (4900 руб. вместо 10000 руб.)
+                    </li>
+                    <li>Скидка 51% для семьи до 4 человек на 14 суток и 2 места для машин (9800 руб. вместо 20000 руб.)
+                    </li>
+                    <li>Скидка 50% для семьи до 5 человек на 14 суток и 3 места для машин (15000 руб. вместо 30000 руб.)
+                    </li>
+                </ul>
+
+                <h3>Преимущества изоляции у нас:</h3>
+                <ul>
+                    <li>Безопасность (территория кемпинга является частной и охраняется)</li>
+                    <li>Мало людей (площадь — 200 кв. м)</li>
+                    <li>Защита от насекомых (территория кемпинга обработана от клещей)</li>
+                    <li>Обустроенный лагерь (беседки, баня, мангал, места для спортивных и детских игр)</li>
+                </ul>
+
+                <p><strong>Условия:</strong> Обязательна предварительная запись по телефону. Для бронирования существуют
+                    общие условия — предоплата 50% или сообщить данные купона (купон будет активирован только в день
+                    приезда). Срок действия купонов: с 19.06.2020 до 31.08.2021 (включительно).</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-book-btn">Забронировать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для акции 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <div class="modal-header">
+                <h2>Скидка до 50%. Изолируйся на месяц в обустроенном кемпинге «Бочки Диогена» со своей второй
+                    половинкой</h2>
+            </div>
+            <div class="modal-body">
+                <img src="images/promotions/promotion3.jpg" alt="Бочки Диогена" class="modal-image">
+
+                <p>Уютные небольшие домики-бочки для желающих провести самоизоляцию отдыха вдвоем. В домике двуспальная
+                    кровать, телевизор, барный холодильник, стол, два стула, душевая кабина, горячая и холодная вода.
+                </p>
+
+                <h3>Купон действует на следующие виды услуг:</h3>
+                <ul>
+                    <li>Скидка 25% для 1 человека на месяц и 1 место для машины (22500 руб. вместо 30000 руб.)</li>
+                    <li>Скидка 50% для семьи из 2 человек на месяц и 1 место для машины (15000 руб. вместо 30000 руб.)
+                    </li>
+                </ul>
+
+                <h3>Включено в проживание:</h3>
+                <ul>
+                    <li>Двуспальная кровать</li>
+                    <li>Телевизор и барный холодильник</li>
+                    <li>Стол и два стула</li>
+                    <li>Душевая кабина</li>
+                    <li>Горячая и холодная вода</li>
+                </ul>
+
+                <p><strong>Условия:</strong> Обязательна предварительная запись по телефону. Для бронирования существуют
+                    общие условия — предоплата 50% или сообщить данные купона (купон будет активирован только в день
+                    приезда). Срок действия купонов: с 19.10.2020 до 20.12.2021 (включительно).</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-book-btn">Забронировать</button>
+            </div>
+        </div>
+    </div>
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Наши дома-бочки</h2>
+
+            <!-- Карусель фотографий -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="images/home/Airbrush-Image-Enhancer-1747054978491.jfif" alt="Некоторые дома-бочки">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/home/Airbrush-Image-Enhancer-1747055267235.jfif" alt="Дом-бочка 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/home/Airbrush-Image-Enhancer-1747055531994.jfif" alt="Дом-бочка 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/home/Airbrush-Image-Enhancer-1747055812103.jfif" alt="Дом-бочка 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/home/Airbrush-Image-Enhancer-1747056064328.jfif" alt="Дом-бочка 4">
+                    </div>
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+                <div class="carousel-dots"></div>
+            </div>
+    </section>
+
+    <script>
+        // Карусель
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+
+            let currentIndex = 0;
+            const slideCount = slides.length;
+
+            // Создаем точки навигации
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Обновляем активную точку
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateCarousel();
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Автопрокрутка (опционально)
+            let interval = setInterval(nextSlide, 5000);
+
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(interval);
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                interval = setInterval(nextSlide, 5000);
+            });
+        });
+    </script>
+
+
+    <!-- Форма подписки -->
+    <section class="subscribe-section">
+        <div class="container">
+            <h2 class="section-title">Подпишитесь на закрытые акции</h2>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Ваш email">
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">Alone at home</div>
+                    <div class="phone">8 (800) 100-10-10</div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-links">
+                        <li>г. Москва, ул. Примерная, 123</li>
+                        <li>info@aloneathome.ru</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alone at home. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>// Функции для работы с модальными окнами
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function (event) {
+            if (event.target.className === 'modal show') {
+                event.target.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Закрытие модального окна при нажатии ESC
+        document.onkeydown = function (evt) {
+            evt = evt || window.event;
+            if (evt.keyCode === 27) {
+                const modals = document.querySelectorAll('.modal.show');
+                modals.forEach(modal => {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        };</script>
+</body>
+
+</html>
